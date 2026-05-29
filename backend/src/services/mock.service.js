@@ -1,8 +1,6 @@
 const generateItinerary = async (extractedText) => {
-  // This runs without any API key or credits
-  console.log("Generating mock itinerary from:", extractedText.substring(0, 100));
+  console.log("Generating mock itinerary from:", extractedText?.substring(0, 100) || "No text");
   
-  // Return realistic mock data
   return {
     destination: "Paris, France",
     startDate: "2024-06-15",
@@ -65,26 +63,12 @@ const generateItinerary = async (extractedText) => {
         meals: { breakfast: "Café", lunch: "Le Marais", dinner: "Airport" }
       }
     ],
-    bookings: {
-      flights: [
-        { airline: "Air France", flightNumber: "AF123", from: "JFK", to: "CDG", departureDateTime: "2024-06-15 18:30", arrivalDateTime: "2024-06-16 08:00" }
-      ],
-      hotels: [
-        { name: "Hotel Le Marais", checkIn: "2024-06-15", checkOut: "2024-06-20", address: "4th Arrondissement, Paris" }
-      ]
-    },
-    recommendations: {
-      restaurants: ["Le Relais de l'Entrecôte", "Breizh Café", "Chez Janou", "L'As du Fallafel"],
-      attractions: ["Sainte-Chapelle", "Panthéon", "Centre Pompidou", "Rodin Museum"],
-      activities: ["Cooking class", "Wine tasting", "Bike tour", "Opera Garnier"]
-    },
     tips: [
       "Book Eiffel Tower tickets 2 months in advance",
       "Get a Paris Museum Pass for multiple attractions",
       "Use Metro - it's efficient and cheap",
       "Learn basic French phrases (Bonjour, Merci, S'il vous plaît)",
-      "Beware of pickpockets in tourist areas",
-      "Many museums are free on first Sunday of month"
+      "Beware of pickpockets in tourist areas"
     ],
     weather: "Sunny, 20-25°C (June weather is pleasant)",
     packingSuggestions: [
@@ -92,15 +76,9 @@ const generateItinerary = async (extractedText) => {
       "Umbrella or light raincoat",
       "Power bank for phone",
       "Universal power adapter",
-      "Portable Wi-Fi hotspot or SIM card",
       "Reusable water bottle",
       "Light jacket for evenings"
-    ],
-    budget: {
-      estimatedTotal: "$1200",
-      currency: "USD",
-      breakdown: { flights: "$500", hotel: "$400", activities: "$200", food: "$100" }
-    }
+    ]
   };
 };
 
